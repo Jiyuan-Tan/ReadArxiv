@@ -63,23 +63,35 @@ def fetch_arxiv_papers(query, category_filter = ["econ.","cs.","stat."], max_res
 
     return papers
 
-# Fetch Data
-length = 2
-query = ["causal inference"]
-papers = fetch_arxiv_papers(query=query, max_results=200, days = length)
+def save_digest(papers, file_name):
+    """
+    Save the list of papers to a text file.
+    
+    Args:
+        papers (list): A list of dictionaries containing paper metadata.
+        file_name (str): The name of the output file.
+    """
+    with open(file_name, "w", encoding="utf-8") as f:
+        for paper in papers:
+            f.write(f"Title: {paper['title']}\n")
+            f.write(f"Published: {paper['published']}\n")
+            f.write(f"Link: {paper['link']}\n")
+            f.write(f"Authors: {', '.join(paper['authors'])}\n")
+            f.write(f"Subjects: {', '.join(paper['Subject'])}\n")
+            f.write(f"Summary: {paper['summary']}\n")
+            f.write("-"*100 + "\n")
 
-today = datetime.now()
-end_date = today - timedelta(days=length)
+if __name__ == "__main__":
+    # Fetch Data
+    length = 2
+    query = ["causal inference"]
+    papers = fetch_arxiv_papers(query=query, max_results=200, days = length)
 
-# Save the papers to a file
-file_name = f"Digest_{query}_{len(papers)}_{today.strftime('%Y-%m-%d')}to{end_date.strftime('%Y-%m-%d')}.txt"
+    today = datetime.now()
+    end_date = today - timedelta(days=length)
 
-with open(file_name, "w", encoding="utf-8") as f:
-    for paper in papers:
-        f.write(f"Title: {paper['title']}\n")
-        f.write(f"Published: {paper['published']}\n")
-        f.write(f"Link: {paper['link']}\n")
-        f.write(f"Authors: {', '.join(paper['authors'])}\n")
-        f.write(f"Subjects: {', '.join(paper['Subject'])}\n")
-        f.write(f"Summary: {paper['summary']}\n")
-        f.write("-"*100 + "\n")
+    # Save the papers to a file
+    file_name = f"Digest_{query}_{len(papers)}_{today.strftime('%Y-%m-%d')}to{end_date.strftime('%Y-%m-%d')}.txt"
+
+    save_digest(papers, file_name)
+
