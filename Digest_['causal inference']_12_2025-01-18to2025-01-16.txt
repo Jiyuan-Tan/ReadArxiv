@@ -1,0 +1,282 @@
+Title: Distilling Multi-modal Large Language Models for Autonomous Driving
+Published: 2025-01-16T18:59:53Z
+Link: http://arxiv.org/abs/2501.09757v1
+Authors: Deepti Hegde, Rajeev Yasarla, Hong Cai, Shizhong Han, Apratim Bhattacharyya, Shweta Mahajan, Litian Liu, Risheek Garrepalli, Vishal M. Patel, Fatih Porikli
+Subjects: cs.CV, cs.RO
+Summary: Autonomous driving demands safe motion planning, especially in critical
+"long-tail" scenarios. Recent end-to-end autonomous driving systems leverage
+large language models (LLMs) as planners to improve generalizability to rare
+events. However, using LLMs at test time introduces high computational costs.
+To address this, we propose DiMA, an end-to-end autonomous driving system that
+maintains the efficiency of an LLM-free (or vision-based) planner while
+leveraging the world knowledge of an LLM. DiMA distills the information from a
+multi-modal LLM to a vision-based end-to-end planner through a set of specially
+designed surrogate tasks. Under a joint training strategy, a scene encoder
+common to both networks produces structured representations that are
+semantically grounded as well as aligned to the final planning objective.
+Notably, the LLM is optional at inference, enabling robust planning without
+compromising on efficiency. Training with DiMA results in a 37% reduction in
+the L2 trajectory error and an 80% reduction in the collision rate of the
+vision-based planner, as well as a 44% trajectory error reduction in longtail
+scenarios. DiMA also achieves state-of-the-art performance on the nuScenes
+planning benchmark.
+----------------------------------------------------------------------------------------------------
+Title: SynthLight: Portrait Relighting with Diffusion Model by Learning to
+  Re-render Synthetic Faces
+Published: 2025-01-16T18:59:48Z
+Link: http://arxiv.org/abs/2501.09756v1
+Authors: Sumit Chaturvedi, Mengwei Ren, Yannick Hold-Geoffroy, Jingyuan Liu, Julie Dorsey, Zhixin Shu
+Subjects: cs.CV, cs.GR
+Summary: We introduce SynthLight, a diffusion model for portrait relighting. Our
+approach frames image relighting as a re-rendering problem, where pixels are
+transformed in response to changes in environmental lighting conditions. Using
+a physically-based rendering engine, we synthesize a dataset to simulate this
+lighting-conditioned transformation with 3D head assets under varying lighting.
+We propose two training and inference strategies to bridge the gap between the
+synthetic and real image domains: (1) multi-task training that takes advantage
+of real human portraits without lighting labels; (2) an inference time
+diffusion sampling procedure based on classifier-free guidance that leverages
+the input portrait to better preserve details. Our method generalizes to
+diverse real photographs and produces realistic illumination effects, including
+specular highlights and cast shadows, while preserving the subject's identity.
+Our quantitative experiments on Light Stage data demonstrate results comparable
+to state-of-the-art relighting methods. Our qualitative results on in-the-wild
+images showcase rich and unprecedented illumination effects. Project Page:
+\url{https://vrroom.github.io/synthlight/}
+----------------------------------------------------------------------------------------------------
+Title: Enhancing Lexicon-Based Text Embeddings with Large Language Models
+Published: 2025-01-16T18:57:20Z
+Link: http://arxiv.org/abs/2501.09749v1
+Authors: Yibin Lei, Tao Shen, Yu Cao, Andrew Yates
+Subjects: cs.CL, cs.IR
+Summary: Recent large language models (LLMs) have demonstrated exceptional performance
+on general-purpose text embedding tasks. While dense embeddings have dominated
+related research, we introduce the first Lexicon-based EmbeddiNgS (LENS)
+leveraging LLMs that achieve competitive performance on these tasks. Regarding
+the inherent tokenization redundancy issue and unidirectional attention
+limitations in traditional causal LLMs, LENS consolidates the vocabulary space
+through token embedding clustering, and investigates bidirectional attention
+and various pooling strategies. Specifically, LENS simplifies lexicon matching
+by assigning each dimension to a specific token cluster, where semantically
+similar tokens are grouped together, and unlocking the full potential of LLMs
+through bidirectional attention. Extensive experiments demonstrate that LENS
+outperforms dense embeddings on the Massive Text Embedding Benchmark (MTEB),
+delivering compact feature representations that match the sizes of dense
+counterparts. Notably, combining LENSE with dense embeddings achieves
+state-of-the-art performance on the retrieval subset of MTEB (i.e. BEIR).
+----------------------------------------------------------------------------------------------------
+Title: Inference-Time Scaling for Diffusion Models beyond Scaling Denoising
+  Steps
+Published: 2025-01-16T18:30:37Z
+Link: http://arxiv.org/abs/2501.09732v1
+Authors: Nanye Ma, Shangyuan Tong, Haolin Jia, Hexiang Hu, Yu-Chuan Su, Mingda Zhang, Xuan Yang, Yandong Li, Tommi Jaakkola, Xuhui Jia, Saining Xie
+Subjects: cs.CV
+Summary: Generative models have made significant impacts across various domains,
+largely due to their ability to scale during training by increasing data,
+computational resources, and model size, a phenomenon characterized by the
+scaling laws. Recent research has begun to explore inference-time scaling
+behavior in Large Language Models (LLMs), revealing how performance can further
+improve with additional computation during inference. Unlike LLMs, diffusion
+models inherently possess the flexibility to adjust inference-time computation
+via the number of denoising steps, although the performance gains typically
+flatten after a few dozen. In this work, we explore the inference-time scaling
+behavior of diffusion models beyond increasing denoising steps and investigate
+how the generation performance can further improve with increased computation.
+Specifically, we consider a search problem aimed at identifying better noises
+for the diffusion sampling process. We structure the design space along two
+axes: the verifiers used to provide feedback, and the algorithms used to find
+better noise candidates. Through extensive experiments on class-conditioned and
+text-conditioned image generation benchmarks, our findings reveal that
+increasing inference-time compute leads to substantial improvements in the
+quality of samples generated by diffusion models, and with the complicated
+nature of images, combinations of the components in the framework can be
+specifically chosen to conform with different application scenario.
+----------------------------------------------------------------------------------------------------
+Title: Predictions as Surrogates: Revisiting Surrogate Outcomes in the Age of
+  AI
+Published: 2025-01-16T18:30:33Z
+Link: http://arxiv.org/abs/2501.09731v1
+Authors: Wenlong Ji, Lihua Lei, Tijana Zrnic
+Subjects: stat.ML, cs.LG
+Summary: We establish a formal connection between the decades-old surrogate outcome
+model in biostatistics and economics and the emerging field of
+prediction-powered inference (PPI). The connection treats predictions from
+pre-trained models, prevalent in the age of AI, as cost-effective surrogates
+for expensive outcomes. Building on the surrogate outcomes literature, we
+develop recalibrated prediction-powered inference, a more efficient approach to
+statistical inference than existing PPI proposals. Our method departs from the
+existing proposals by using flexible machine learning techniques to learn the
+optimal ``imputed loss'' through a step we call recalibration. Importantly, the
+method always improves upon the estimator that relies solely on the data with
+available true outcomes, even when the optimal imputed loss is estimated
+imperfectly, and it achieves the smallest asymptotic variance among PPI
+estimators if the estimate is consistent. Computationally, our optimization
+objective is convex whenever the loss function that defines the target
+parameter is convex. We further analyze the benefits of recalibration, both
+theoretically and numerically, in several common scenarios where machine
+learning predictions systematically deviate from the outcome of interest. We
+demonstrate significant gains in effective sample size over existing PPI
+proposals via three applications leveraging state-of-the-art machine
+learning/AI models.
+----------------------------------------------------------------------------------------------------
+Title: Towards Large Reasoning Models: A Survey of Reinforced Reasoning with
+  Large Language Models
+Published: 2025-01-16T17:37:58Z
+Link: http://arxiv.org/abs/2501.09686v1
+Authors: Fengli Xu, Qianyue Hao, Zefang Zong, Jingwei Wang, Yunke Zhang, Jingyi Wang, Xiaochong Lan, Jiahui Gong, Tianjian Ouyang, Fanjin Meng, Chenyang Shao, Yuwei Yan, Qinglong Yang, Yiwen Song, Sijian Ren, Xinyuan Hu, Yu Li, Jie Feng, Chen Gao, Yong Li
+Subjects: cs.AI, cs.CL
+Summary: Language has long been conceived as an essential tool for human reasoning.
+The breakthrough of Large Language Models (LLMs) has sparked significant
+research interest in leveraging these models to tackle complex reasoning tasks.
+Researchers have moved beyond simple autoregressive token generation by
+introducing the concept of "thought" -- a sequence of tokens representing
+intermediate steps in the reasoning process. This innovative paradigm enables
+LLMs' to mimic complex human reasoning processes, such as tree search and
+reflective thinking. Recently, an emerging trend of learning to reason has
+applied reinforcement learning (RL) to train LLMs to master reasoning
+processes. This approach enables the automatic generation of high-quality
+reasoning trajectories through trial-and-error search algorithms, significantly
+expanding LLMs' reasoning capacity by providing substantially more training
+data. Furthermore, recent studies demonstrate that encouraging LLMs to "think"
+with more tokens during test-time inference can further significantly boost
+reasoning accuracy. Therefore, the train-time and test-time scaling combined to
+show a new research frontier -- a path toward Large Reasoning Model. The
+introduction of OpenAI's o1 series marks a significant milestone in this
+research direction. In this survey, we present a comprehensive review of recent
+progress in LLM reasoning. We begin by introducing the foundational background
+of LLMs and then explore the key technical components driving the development
+of large reasoning models, with a focus on automated data construction,
+learning-to-reason techniques, and test-time scaling. We also analyze popular
+open-source projects at building large reasoning models, and conclude with open
+challenges and future research directions.
+----------------------------------------------------------------------------------------------------
+Title: Reward-Guided Controlled Generation for Inference-Time Alignment in
+  Diffusion Models: Tutorial and Review
+Published: 2025-01-16T17:37:35Z
+Link: http://arxiv.org/abs/2501.09685v1
+Authors: Masatoshi Uehara, Yulai Zhao, Chenyu Wang, Xiner Li, Aviv Regev, Sergey Levine, Tommaso Biancalani
+Subjects: cs.AI, cs.LG, q-bio.QM, stat.ML
+Summary: This tutorial provides an in-depth guide on inference-time guidance and
+alignment methods for optimizing downstream reward functions in diffusion
+models. While diffusion models are renowned for their generative modeling
+capabilities, practical applications in fields such as biology often require
+sample generation that maximizes specific metrics (e.g., stability, affinity in
+proteins, closeness to target structures). In these scenarios, diffusion models
+can be adapted not only to generate realistic samples but also to explicitly
+maximize desired measures at inference time without fine-tuning. This tutorial
+explores the foundational aspects of such inference-time algorithms. We review
+these methods from a unified perspective, demonstrating that current techniques
+-- such as Sequential Monte Carlo (SMC)-based guidance, value-based sampling,
+and classifier guidance -- aim to approximate soft optimal denoising processes
+(a.k.a. policies in RL) that combine pre-trained denoising processes with value
+functions serving as look-ahead functions that predict from intermediate states
+to terminal rewards. Within this framework, we present several novel algorithms
+not yet covered in the literature. Furthermore, we discuss (1) fine-tuning
+methods combined with inference-time techniques, (2) inference-time algorithms
+based on search algorithms such as Monte Carlo tree search, which have received
+limited attention in current research, and (3) connections between
+inference-time algorithms in language models and diffusion models. The code of
+this tutorial on protein design is available at
+https://github.com/masa-ue/AlignInversePro
+----------------------------------------------------------------------------------------------------
+Title: Statistical inference for interacting innovation processes and related
+  general results
+Published: 2025-01-16T16:43:05Z
+Link: http://arxiv.org/abs/2501.09648v1
+Authors: Giacomo Aletti, Irene Crimaldi, Andrea Ghiglietti
+Subjects: stat.ME, math.ST, stat.TH
+Summary: Given the importance of understanding how different innovation processes
+affect each other, we have introduced a model for a finite system of
+interacting innovation processes. The present work focuses on the second-order
+asymptotic properties of the model and illustrates how to leverage the
+theoretical results in order to make statistical inference on the intensity of
+the interaction. We apply the proposed tools to two real data sets (from Reddit
+and Gutenberg).
+----------------------------------------------------------------------------------------------------
+Title: Beyond Reward Hacking: Causal Rewards for Large Language Model Alignment
+Published: 2025-01-16T16:00:37Z
+Link: http://arxiv.org/abs/2501.09620v1
+Authors: Chaoqi Wang, Zhuokai Zhao, Yibo Jiang, Zhaorun Chen, Chen Zhu, Yuxin Chen, Jiayi Liu, Lizhu Zhang, Xiangjun Fan, Hao Ma, Sinong Wang
+Subjects: cs.LG, cs.AI
+Summary: Recent advances in large language models (LLMs) have demonstrated significant
+progress in performing complex tasks. While Reinforcement Learning from Human
+Feedback (RLHF) has been effective in aligning LLMs with human preferences, it
+is susceptible to spurious correlations in reward modeling. Consequently, it
+often introduces biases-such as length bias, sycophancy, conceptual bias, and
+discrimination that hinder the model's ability to capture true causal
+relationships. To address this, we propose a novel causal reward modeling
+approach that integrates causal inference to mitigate these spurious
+correlations. Our method enforces counterfactual invariance, ensuring reward
+predictions remain consistent when irrelevant variables are altered. Through
+experiments on both synthetic and real-world datasets, we show that our
+approach mitigates various types of spurious correlations effectively,
+resulting in more reliable and fair alignment of LLMs with human preferences.
+As a drop-in enhancement to the existing RLHF workflow, our causal reward
+modeling provides a practical way to improve the trustworthiness and fairness
+of LLM finetuning.
+----------------------------------------------------------------------------------------------------
+Title: Managed-Retention Memory: A New Class of Memory for the AI Era
+Published: 2025-01-16T15:25:44Z
+Link: http://arxiv.org/abs/2501.09605v1
+Authors: Sergey Legtchenko, Ioan Stefanovici, Richard Black, Antony Rowstron, Junyi Liu, Paolo Costa, Burcu Canakci, Dushyanth Narayanan, Xingbo Wu
+Subjects: cs.AR, cs.AI, cs.DC, cs.ET
+Summary: AI clusters today are one of the major uses of High Bandwidth Memory (HBM).
+However, HBM is suboptimal for AI workloads for several reasons. Analysis shows
+HBM is overprovisioned on write performance, but underprovisioned on density
+and read bandwidth, and also has significant energy per bit overheads. It is
+also expensive, with lower yield than DRAM due to manufacturing complexity. We
+propose a new memory class: Managed-Retention Memory (MRM), which is more
+optimized to store key data structures for AI inference workloads. We believe
+that MRM may finally provide a path to viability for technologies that were
+originally proposed to support Storage Class Memory (SCM). These technologies
+traditionally offered long-term persistence (10+ years) but provided poor IO
+performance and/or endurance. MRM makes different trade-offs, and by
+understanding the workload IO patterns, MRM foregoes long-term data retention
+and write performance for better potential performance on the metrics important
+for these workloads.
+----------------------------------------------------------------------------------------------------
+Title: Atleus: Accelerating Transformers on the Edge Enabled by 3D
+  Heterogeneous Manycore Architectures
+Published: 2025-01-16T15:11:33Z
+Link: http://arxiv.org/abs/2501.09588v1
+Authors: Pratyush Dhingra, Janardhan Rao Doppa, Partha Pratim Pande
+Subjects: cs.AR, cs.LG
+Summary: Transformer architectures have become the standard neural network model for
+various machine learning applications including natural language processing and
+computer vision. However, the compute and memory requirements introduced by
+transformer models make them challenging to adopt for edge applications.
+Furthermore, fine-tuning pre-trained transformers (e.g., foundation models) is
+a common task to enhance the model's predictive performance on specific
+tasks/applications. Existing transformer accelerators are oblivious to
+complexities introduced by fine-tuning. In this paper, we propose the design of
+a three-dimensional (3D) heterogeneous architecture referred to as Atleus that
+incorporates heterogeneous computing resources specifically optimized to
+accelerate transformer models for the dual purposes of fine-tuning and
+inference. Specifically, Atleus utilizes non-volatile memory and systolic array
+for accelerating transformer computational kernels using an integrated 3D
+platform. Moreover, we design a suitable NoC to achieve high performance and
+energy efficiency. Finally, Atleus adopts an effective quantization scheme to
+support model compression. Experimental results demonstrate that Atleus
+outperforms existing state-of-the-art by up to 56x and 64.5x in terms of
+performance and energy efficiency respectively
+----------------------------------------------------------------------------------------------------
+Title: Recovering latent linkage structures and spillover effects with
+  structural breaks in panel data models
+Published: 2025-01-16T13:04:08Z
+Link: http://arxiv.org/abs/2501.09517v1
+Authors: Ryo Okui, Yutao Sun, Wendun Wang
+Subjects: econ.EM
+Summary: This paper introduces a framework to analyze time-varying spillover effects
+in panel data. We consider panel models where a unit's outcome depends not only
+on its own characteristics (private effects) but also on the characteristics of
+other units (spillover effects). The linkage of units is allowed to be latent
+and may shift at an unknown breakpoint. We propose a novel procedure to
+estimate the breakpoint, linkage structure, spillover and private effects. We
+address the high-dimensionality of spillover effect parameters using penalized
+estimation, and estimate the breakpoint with refinement. We establish the
+super-consistency of the breakpoint estimator, ensuring that inferences about
+other parameters can proceed as if the breakpoint were known. The private
+effect parameters are estimated using a double machine learning method. The
+proposed method is applied to estimate the cross-country R&D spillovers, and we
+find that the R&D spillovers become sparser after the financial crisis.
+----------------------------------------------------------------------------------------------------
